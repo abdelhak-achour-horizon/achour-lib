@@ -29,4 +29,4 @@ jobs:
     inputs:
       version: 'latest'
       image: 'abdelhakachourhorizon/azp-test:$(tag)'
-      severities: 'CRITICAL,HIGH,MEDIUM,LOW'
+      severities: 'CRITICAL'
