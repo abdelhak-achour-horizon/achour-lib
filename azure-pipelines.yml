@@ -22,6 +22,11 @@ jobs:
     inputs:
       containerRegistry: 'uni-docker-hub'
       repository: 'abdelhakachourhorizon/azp-test'
-      command: 'buildAndPush'
+      command: 'build'
       Dockerfile: '**/Dockerfile'
       tags: '$(tag)'
+  - task: trivy@1
+    inputs:
+      version: 'latest'
+      image: 'abdelhakachourhorizon/azp-test:$(tag)'
+      severities: 'CRITICAL,HIGH,MEDIUM,LOW'
